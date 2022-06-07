@@ -1,11 +1,12 @@
 const fs = require('fs');
 const pdf = require('pdf-parse');
-
 const {
     Document,
     Packer,
     Paragraph,
 } = require('docx');
+
+const getTextToArr = (text) => (text.split('\n\n'));
 
 const getDocxToText = async (dataBuffer) => {
     return pdf(dataBuffer)
@@ -18,7 +19,7 @@ const getDocxToText = async (dataBuffer) => {
     });
 }
 
-const textToDocxFile = async (textArr, filePath, fileName) => {
+const ChangeTextToDocxFile = async (textArr, filePath, fileName) => {
     console.log("Now converting file ...");
     let sectionsArr = [];
 
@@ -43,8 +44,6 @@ const textToDocxFile = async (textArr, filePath, fileName) => {
 
 }
 
-const getTextToArr = (text) => (text.split('\n\n'));
-
 const convertDocx = (filePath, fileName) => {
     
     let dataBuffer = fs.readFileSync(filePath + '/' + fileName);
@@ -57,11 +56,8 @@ const convertDocx = (filePath, fileName) => {
         console.error(`reason : ${reason}`);    
     })
     .then(function(textArr) {
-        textToDocxFile(textArr, filePath, fileName);
+        ChangeTextToDocxFile(textArr, filePath, fileName);
     });
-    
 }
 
-convertDocx(__dirname, 'sample2.pdf');
-
-module.exports = convertDocx;
+exports.convertDocx = convertDocx;

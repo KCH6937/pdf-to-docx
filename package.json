@@ -1,8 +1,8 @@
 {
-  "name": "pdftodoc",
+  "name": "convert-pdf-as-docx",
   "version": "0.0.1",
   "description": "convert .pdf file to .docx easily",
-  "main": "index.js",
+  "main": "converter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,11 +11,9 @@
     "url": "git+https://github.com/KCH6937/pdf-to-docx.git"
   },
   "keywords": [
-    "file",
+    "pdf to docx",
     "convert",
     ".pdf",
-    "file",
-    "to",
     ".docx"
   ],
   "author": "adasddasd12@gmail.com",
