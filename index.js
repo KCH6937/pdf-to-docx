@@ -7,7 +7,7 @@ const {
     Paragraph,
 } = require('docx');
 
-async function getDocxToText(dataBuffer) {
+const getDocxToText = async (dataBuffer) => {
     return pdf(dataBuffer)
     .then(function(result) {
         return result.text; // docx to text
@@ -18,7 +18,7 @@ async function getDocxToText(dataBuffer) {
     });
 }
 
-async function textToDocxFile(textArr, filePath, fileName) {
+const textToDocxFile = async (textArr, filePath, fileName) => {
     console.log("Now converting file ...");
     let sectionsArr = [];
 
@@ -43,11 +43,9 @@ async function textToDocxFile(textArr, filePath, fileName) {
 
 }
 
-function getTextToArr(text) {
-    return text.split('\n\n');
-}
+const getTextToArr = (text) => (text.split('\n\n'));
 
-convertDocx = (filePath, fileName) => {
+const convertDocx = (filePath, fileName) => {
     
     let dataBuffer = fs.readFileSync(filePath + '/' + fileName);
 
