@@ -1,5 +1,5 @@
 {
-  "name": "convert-pdf-as-docx",
+  "name": "pdf-convert-docx",
   "version": "0.0.1",
   "description": "convert .pdf file to .docx easily",
   "main": "converter.js",
