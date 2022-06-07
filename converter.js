@@ -41,7 +41,6 @@ const ChangeTextToDocxFile = async (textArr, filePath, fileName) => {
         let docxFileName = fileName.split('.pdf')[0];
         fs.writeFileSync(`${filePath}/${docxFileName}.docx`, buffer);
     });
-
 }
 
 const convertDocx = (filePath, fileName) => {
@@ -57,6 +56,8 @@ const convertDocx = (filePath, fileName) => {
     })
     .then(function(textArr) {
         ChangeTextToDocxFile(textArr, filePath, fileName);
+    }).then(function() {
+        console.log('complete converting!');
     });
 }
 

@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/KCH6937/pdf-to-docx/issues"
   },
-  "homepage": "https://github.com/KCH6937/pdf-to-docx#readme"
+  "homepage": "https://github.com/KCH6937/pdf-to-docx#readme",
+  "dependencies": {
+    "convert-pdf-as-docx": "^0.0.1"
+  }
 }
